@@ -6,4 +6,4 @@ cpp $CFILE > c
 
 echo "Preprocessing completed and saved to 'c'"
 
-exit 0
+
