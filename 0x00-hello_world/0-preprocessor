@@ -3,17 +3,15 @@
 CFILE=$1
 
 if [ -z "$CFILE" ]; then
-echo "Error: No C file specified."
-exit 1
+	echo "Error: No C file specified"
+	exit 1
 fi
 
 if [ ! -f "$CFILE" ]; then
-echo "Error: C file does not exist."
-exit 1
+	echo "Error: C file does not exist"
+	exit 1
 fi
 
-cpp $CFILE > c
+cpp "$CFILE" > "c"
 
-echo "Preprocessing complete. Output saved in c file."
-
-exit 0
+echo "Preprocessing of $CFILE complete. Output saved in c file."
