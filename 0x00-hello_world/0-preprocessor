@@ -1,6 +1,2 @@
 #!/bin/bash
-
-CFILE=$1
-OUTFILE=$2
-
-cpp $CFILE > $OUTFILE
+gcc $CFILE -E -o c
