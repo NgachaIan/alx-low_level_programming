@@ -1,0 +1,26 @@
+#!/bin/bash
+
+CFILE=$1
+
+if [ -z "$CFILE" ]; then
+echo "Error: No C file specified."
+exit 1
+fi
+
+if [ ! -f "$CFILE" ]; then
+echo "Error: C file does not exist."
+exit 1
+fi
+
+OUTFILE=$(basename "$CFILE" .c).s
+
+gcc -S -masm=intel $CFILE -o $OUTFILE
+
+if [ $? -eq 0 ]; then
+echo "Assembly code generation (Intel syntax) complete. Output file: $OUTFILE"
+else
+echo "Assembly code generation failed."
+exit 1
+fi
+
+exit 0
