@@ -1,2 +1,11 @@
 #!/bin/bash
-gcc -S $CFILE
+
+# Get the name of the C file
+CFILE=$1
+
+# Generate the assembly code for the C file
+as -o "${CFILE%.*}.o" "$CFILE"
+
+# Extract the assembly code from the object file and save it in the output file
+objdump -d "${CFILE%.*}.o" > "${CFILE%.*}.s"
+
