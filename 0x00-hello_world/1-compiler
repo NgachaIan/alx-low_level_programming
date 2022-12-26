@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Save the C file name in a variable
-CFILE=$1
-
-# Compile the C file but do not link
+# Compile the C file and save the object file with the same name as the C file, but with the extension .o instead of .c
 gcc -c $CFILE -o ${CFILE%.c}.o
 
