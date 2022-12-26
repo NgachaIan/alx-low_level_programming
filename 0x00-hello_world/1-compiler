@@ -1,2 +1,8 @@
 #!/bin/bash
-gcc -c $CFILE
+
+# Save the C file name in a variable
+CFILE=$1
+
+# Compile the C file but do not link
+gcc -c $CFILE -o ${CFILE%.c}.o
+
