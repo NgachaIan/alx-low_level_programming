@@ -1,24 +1,2 @@
 #!/bin/bash
-
-CFILE=$1
-
-if [ -z "$CFILE" ]; then
-echo "Error: No C file specified."
-exit 1
-fi
-
-if [ ! -f "$CFILE" ]; then
-echo "Error: C file does not exist."
-exit 1
-fi
-
 gcc $CFILE -o cisfun
-
-if [ $? -eq 0 ]; then
-echo "Compilation and linking complete. Executable: cisfun"
-else
-echo "Compilation and linking failed."
-exit 1
-fi
-
-exit 0
